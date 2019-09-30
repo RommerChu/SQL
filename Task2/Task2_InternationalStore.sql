@@ -90,6 +90,7 @@ AS
 select Products.ProductName from Products
 GO
 
+<<<<<<< HEAD
 EXEC ProductSearch
 
 /*
@@ -122,3 +123,6 @@ select * from GermanyOrder1996_1997
 /*
 7. Create a nonclustered index on the primary key for the Customers Table and Create a clustered index on the CompanyName field of the Customers table.
 */
+=======
+EXEC ProductSearch
+>>>>>>> 92ea87d83c0ccd5f3d51014384afc894329f7c53
