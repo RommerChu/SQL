@@ -6,14 +6,14 @@ More formally, based on specifications below, in this project you will have to:
 1. Develop a diagram representing the tables and the relationships amont them.
 2. Create the tables and their attributes(i.e the schemas) in MSSQL 2008.
 3. Create 10 sample records within the appropriate tables.
-
 *****************Not yet been discussed********************************
 4.Set up indexes, and configure auto indexing, shrinkage, and backups as you feel
 5.Ensure that you have a redundant copy of the database on another computer (i.e log shipping or repliccation or mirrorring) to provide high availability
 */
-
+Create database University
 Use University
 Select * from Categories
+
 
 /*****************************
 Table: Categories
