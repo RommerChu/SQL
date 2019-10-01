@@ -39,12 +39,6 @@ INNER JOIN
 select * from Customers
 select * from Orders
 select * from OrderDetails
-
-
-/*To display CompanyName, Address of the Customer*/
-select * from Customers
-select * from Orders
-select * from OrderDetails
 select Customers.CompanyName, Customers.Address, Customers.CustomerID from Customers inner join Orders on Customers.CustomerID=Orders.CustomerID order by Customers.CompanyName
 
 
@@ -90,7 +84,7 @@ AS
 select Products.ProductName from Products
 GO
 
-<<<<<<< HEAD
+
 EXEC ProductSearch
 
 /*
@@ -123,6 +117,14 @@ select * from GermanyOrder1996_1997
 /*
 7. Create a nonclustered index on the primary key for the Customers Table and Create a clustered index on the CompanyName field of the Customers table.
 */
-=======
-EXEC ProductSearch
->>>>>>> 92ea87d83c0ccd5f3d51014384afc894329f7c53
+
+
+/*
+8. Provide a list of suitable fields that you could implement full text searching on.
+*/
+
+
+/*
+9. Create a database Diagram in sql server to sh ow the realtionships between the tables above
+*/
+
