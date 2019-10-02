@@ -11,41 +11,33 @@ and setup the relationships between the tables.
 create database InternationalStore
 use InternationalStore
 
-
-/*
-2. Once you have finished this, create a querty that displays: CompanyName, Address, of the Customer along with the
-total for each order that the customer has made. Save this query as a sql script called Queston2.sql to your desktop.
-*/
-
 select * from Customers
 select * from Orders
 select * from OrderDetails
 select * from Products
 
 /*
-SELECT 
-	Customers.CompanyName, 
-	Customers.Address, 
-	Customers.CustomerID
-FROM 
-	Customers 
-INNER JOIN 
-	Orders on Orders.OrderID=Orders.OrderID order by Customers.CustomerID
-INNER JOIN
-	OrderDetails ON OrderDetails.OrderID = Orders.OrderID
+2. Once you have finished this, create a querty that displays: CompanyName, Address, of the Customer along with the
+total for each order that the customer has made. Save this query as a sql script called Queston2.sql to your desktop.
 */
 
 /*To display CompanyName, Address of the Customer*/
 select * from Customers
 select * from Orders
 select * from OrderDetails
-select Customers.CompanyName, Customers.Address, Customers.CustomerID from Customers inner join Orders on Customers.CustomerID=Orders.CustomerID order by Customers.CompanyName
+select 
+	Customers.CompanyName, 
+	Customers.Address, 
+	Customers.CustomerID, 
+	OrderDetails.UnitPrice, 
+	OrderDetails.Quantity 
+from 
+	Customers 
+inner join 
+	Orders on Customers.CustomerID=Orders.CustomerID 
+right join 
+	OrderDetails on Orders.OrderID=OrderDetails.OrderID order by Customers.CompanyName;
 
-
-/*To display CompanyName each order*/
-select * from Orders
-select * from OrderDetails
-select Orders.OrderID, Orders.CustomerID, OrderDetails.UnitPrice, OrderDetails.Quantity from Orders right join OrderDetails on Orders.OrderID=OrderDetails.OrderID
 
 /*
 3. Create a View that joins the customers table to the orders table and have the view show CompanyName, Address, City and OrderDate.
@@ -118,13 +110,29 @@ select * from GermanyOrder1996_1997
 7. Create a nonclustered index on the primary key for the Customers Table and Create a clustered index on the CompanyName field of the Customers table.
 */
 
+select * from Customers;
+
+/**NONCLUSTERED**/
+create nonclustered index ix_nonc_CustomerID
+	on Customers(CustomerID);
+
+select * from Customers where CustomerID like '%a';
+
+/**CLUSTERED***************CLUSTERED CAN ONLY BE CREATED ON ONE PK. PK ALREADY CREATED AUTOMATICALLY
+create clustered index ix_clus_CustomerName
+	on Customers(CompanyName);**/
+
+select * from Customers where CompanyName like '%ch%';
+
 
 /*
 8. Provide a list of suitable fields that you could implement full text searching on.
 */
 
+select * from Customers where Phone like '(171)%';
+select * from Orders where CustomerID like 'a%' and ShipCountry='Mexico'; 
 
 /*
-9. Create a database Diagram in sql server to sh ow the realtionships between the tables above
+9. Create a database Diagram in sql server to show the realtionships between the tables above
 */
 

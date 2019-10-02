@@ -1,0 +1,281 @@
+Data Insert
+
+-- -----------------------------------------------------
+-- Table `University`.`Status`
+-- -----------------------------------------------------
+Insert into University.Status (StatusID, Status, Date_Created, Date_Modified)
+values
+(1,'Waiting','2019-10-02','2019-10-02'),
+(2,'Active','2019-10-02','2019-10-02');
+
+-- -----------------------------------------------------
+-- Table `University`.`Categories`
+-- -----------------------------------------------------
+Insert into University.Categories (CategoriesID, Category_Name, Date_Created, Date_Modified)
+values
+(1, 'Freshmen','2019-10-02','2019-10-02'),
+(2, 'Sophomore','2019-10-02','2019-10-02'),
+(3, 'Junior','2019-10-02','2019-10-02'),
+(4, 'Senior','2019-10-02','2019-10-02');
+
+
+-- -----------------------------------------------------
+-- Table `University`.`Advisors`
+-- -----------------------------------------------------
+Insert into University.Advisors (AdvisorID, First_Name, Last_Name, Phone_Number, Email, Date_Created, Date_Modified)
+values
+(1,'Rommer','Chu','416-720-2720','rommer.chu@gmail.com','2019-09-28','2019-09-28'),
+(2,'Corazon','Chu','cora@gmail.com','416-720-2700','2019-09-28','2019-09-28'),
+(3,'John Paul','Smith','514-258-1245','John12@yahoo.ca','2019-09-28','2019-09-28'),
+(4,'Abigail','Tsan','647-123-2720','abby45@live.com','2019-09-28','2019-09-28'),
+(5,'Peter John','Roe','547-126-901','pj101@hotmail.com','2019-09-28','2019-09-28'),
+(6,'Zeek','Cummins','547-126-987','zeek@rogers.com','2019-09-28','2019-09-28'),
+(7,'Tetley','Tea','547-126-957','tetley@gmail.com','2019-09-28','2019-09-28'),
+(8,'Fraya','Beau','874-658-215','fraya@gmail.com','2019-09-28','2019-09-28'),
+(9,'Squirtle','Stone','456-123-789','squirtle123@hotmail.com','2019-09-28','2019-09-28'),
+(10,'Lovely','Rake','547-556-785','happy123@live.com','2019-09-28','2019-09-28');
+
+-- -----------------------------------------------------
+-- Table `University`.`Student`
+-- -----------------------------------------------------
+Insert into University.Student (StudentID, First_Name, Last_Name, Address, Gender, Nationality, Special_Needs, Categories_CategoriesID, Advisors_AdvisorsID, Status_id, Comments, Date_Created, Date_Modified)
+values
+(1,'William','Smith','123 Center Rd, Mono ON','Male','American','Tutorial need','NONE',1,2,'In-Process','NONE','2019-09-28','2019-09-28'),
+(2,'Steven','Frott','101 Amaranth St, Subsurb ON','Male','Canadian','None',1,4,'Occupying','NONE','2019-09-28','2019-09-28'),
+(3,'Stacey','Adams','1150 Rutherford, Toronto ON','Female','Irish', 'None',2,6,'Waiting','NONE','2019-09-28','2019-09-28'),
+(4,'Vannesa','Doe','5th St. Center Ave, North York ON','Female','British','None',3,8,'In-Process','NONE','2019-09-28','2019-09-28'),
+(5,'Matt','Thomas','100 Daisy Drive, Caledon ON','Male','Jamaican', 'Process graduation',4,'Occupying''NONE','2019-09-28','2019-09-28'),
+(6,'Corazon','Ramos','19 Orchids St.Brampton ON','Female','Spanish','None',3,10,'Occupying','NONE','2019-09-28','2019-09-28'),
+(7,'Jeff','Blumberg','55 Sweet Candy Rd, Ajax ON','Male','Swedish','None',2,1,'Occupying', 'NONE','2019-09-28','2019-09-28'),
+(8,'Hanna','Daviniche','10-A Richmond Ave, Richmond ON','Female','German', 'None',1,3,'In-Process''NONE','2019-09-28','2019-09-28'),
+(9,'Victor','Wilson','40 First St, Orangeville ON','Male','Japanese', 'None',4,5,'In-Process''NONE','2019-09-28','2019-09-28'),
+(10,'Juanito','Soler','1865 Dundas St, Peterbourough ON','Male','Mexican','LanguageTranslator',1,7,'Not Applicable','NONE','2019-09-28','2019-09-28');
+
+
+-- -----------------------------------------------------
+-- Table `University`.`Contacts`
+-- -----------------------------------------------------
+Insert into University.Contacts (ContactID, SSN, First_Name, Last_Name, StudentID, Relationship, Address, Phone_No, Date_Created, Date_Modified)
+values
+(1,'5612251998','Robert','Smith',1,'Father','123 Center Rd, Mono ON','647-115-6985','2019-09-28','2019-09-28'),
+(2,'487966551','Nancy','Frott',2,'Mother','101 Amaranth St, Subsurb ON','519-224-6901','2019-09-28','2019-09-28'),
+(3,'785648533','Rupert','Adams',3,'Father','1150 Rutherford, Toronto ON','416-885-7793','2019-09-28','2019-09-28'),
+(4,'416885217','Adam','Doe',4,'Father','5th St. Center Ave, North York ON','905-554-4114','2019-09-28','2019-09-28'),
+(5,'785648533','Jackie','Allen',5,'Aunt','89 Daisy Drive, Caledon ON','699-224-5454','2019-09-28','2019-09-28'),
+(6,'5612779918','Juanito','Ramos',6,'Father','19 Orchids St.Brampton ON','645-123-1231','2019-09-28','2019-09-28'),
+(7,'785648533','Stephanie','Blumberg',7,'Mother','55 Sweet Candy Rd, Ajax ON','647-288-8818','2019-09-28','2019-09-28'),
+(8,'561277844','John','Daviniche',8,'Father','10-A Richmond Ave,Richmond ON','647-444-7771','2019-09-28','2019-09-28'),
+(9,'5612779951','Jack','Wilson',9,'Father','40 First St, Orangeville ON','905-453-5333','2019-09-28','2019-09-28'),
+(10,'4896665123','Anita','Soler',10,'Mother','1865 Dundas St, Peterbourough ON','416-885-7793','2019-09-28','2019-09-28');
+
+
+-- -----------------------------------------------------
+-- Table `University`.`HallResidence`
+-- -----------------------------------------------------
+Insert into University.HallResidence (HallResidenceID, Residence_Name, Address, Number_of_Rooms, Telephone, Manager_Name, Monthly_Rate, Date_Created, Date_Modified)
+values
+(1,'Alpha Hall','255 Chrysler st., University belt, ON', '20', '645-888-1551','Steven Martin','$800','2019-09-28','2019-09-28'),
+(2,'Bravo Hall','257 Chrysler st., University belt, ON', '30', '591-665-2245','Victoria Ly','$600','2019-09-28','2019-09-28'),
+(3,'Charlie Hall','259 Chrysler st., University belt, ON', '20', '905-123-456','Jane Matthew','$500','2019-09-28','2019-09-28'),
+
+
+-- -----------------------------------------------------
+-- Table `University`.`Flat_Level`
+-- -----------------------------------------------------
+Insert into University.Flat_Level (FlatID, Type, Date_Created, Date_Modified)
+values
+(1, '1st Floor','2019-09-28','2019-09-28'),
+(2, '2nd Floor','2019-09-28','2019-09-28'),
+(3, '3rd Floor','2019-09-28','2019-09-28');
+
+-- -----------------------------------------------------
+-- Table `University`.`Flat`
+-- -----------------------------------------------------
+Insert into University.Flat (FlatID, Flat_Level_id, Address, Date_Created, Date_Modified)
+values 
+(1, 1, '255 Chrysler st., University belt, ON', '2019-09-28','2019-09-28'),
+(1, 1, '257 Chrysler st., University belt, ON', '2019-09-28','2019-09-28'),
+(1, 2, '259 Chrysler st., University belt, ON', '2019-09-28','2019-09-28'),
+(1, 3, '257 Chrysler st., University belt, ON', '2019-09-28','2019-09-28'),
+(1, 3, '259 Chrysler st., University belt, ON', '2019-09-28','2019-09-28'),
+(1, 2, '255 Chrysler st., University belt, ON', '2019-09-28','2019-09-28');
+
+-- -----------------------------------------------------
+-- Table `University`.`Accommodation_Type`
+-- -----------------------------------------------------
+Insert into University.Accommodation_Type (AccommodationTypeID,HallResidence_HallResidenceID,Flat_FlatID,Date_Created,Date_Modified)
+values
+(1, 1, 1,'2019-09-28','2019-09-28'),
+(2, 2, 1,'2019-09-28','2019-09-28'),
+(3, 1, 1,'2019-09-28','2019-09-28'),
+(4, 3, 2,'2019-09-28','2019-09-28'),
+(5, 3, 2,'2019-09-28','2019-09-28'),
+(6, 1, 2,'2019-09-28','2019-09-28'),
+(7, 2, 3,'2019-09-28','2019-09-28'),
+(8, 2, 3,'2019-09-28','2019-09-28'),
+(9, 1, 3,'2019-09-28','2019-09-28');
+
+
+-- -----------------------------------------------------
+-- Table `University`.`Student_Accommodation`
+-- -----------------------------------------------------
+Insert into University.Student_Accommodation (Student_AccommodationID, Accommodation_Type_AccommodationTypeID, Status_id, Contacts_id, Date_Created, Date_Modified)
+values
+(1, 1, 2, 1,'2019-09-28','2019-09-28'),
+(2, 2, 2, 2,'2019-09-28','2019-09-28'),
+(3, 3, 2, 3,'2019-09-28','2019-09-28'),
+(4, 4, 1, 4,'2019-09-28','2019-09-28'),
+(5, 5, 1, 5,'2019-09-28','2019-09-28'),
+(6, 6, 2, 6,'2019-09-28','2019-09-28'),
+(7, 7, 2, 7,'2019-09-28','2019-09-28'),
+(8, 8, 1, 8,'2019-09-28','2019-09-28'),
+(9, 9, 2, 9,'2019-09-28','2019-09-28'),
+(10, 2, 1, 10,'2019-09-28','2019-09-28');
+
+-- -----------------------------------------------------
+-- Table `University`.`Instructors`
+-- -----------------------------------------------------
+insert into University.Instructors (InstructorsID, FirstName, LastName, Faculty, Date_Created, Date_Modified)
+values
+(1, 'Pokemon', 'Zeek', 'Philosophy', '2019-09-28','2019-09-28'),
+(2, 'Frayah', 'Oley', 'Math', '2019-09-28','2019-09-28'),
+(3, 'Tetlish', 'Tiger', 'Police Foundation', '2019-09-28','2019-09-28'),
+(4, 'Charlie', 'Woods', 'Commerce', '2019-09-28','2019-09-28'),
+(5, 'John', 'Pooper', 'Engineering', '2019-09-28','2019-09-28'),
+(6, 'Abigail', 'Gravol', 'Natural Sciences', '2019-09-28','2019-09-28'),
+(7, 'Corrs', 'Washington', 'Education', '2019-09-28','2019-09-28'),
+(8, 'Peter', 'Pangit', 'Law', '2019-09-28','2019-09-28'),
+(9, 'Lysol', 'Lingettes', 'Music', '2019-09-28','2019-09-28'),
+(10, 'Benylin', 'Toux', 'Economics', '2019-09-28','2019-09-28');
+
+-- -----------------------------------------------------
+-- Table `University`.`Course`
+-- -----------------------------------------------------
+Insert into University.Course (CourseID, Course_Title, Room_Number, Instructors_InstructorsID, Date_Created, Date_Modified)
+values
+(1,'Philosophy101-Introduction', 2, 1,'2019-09-28','2019-09-28'),
+(2,'Mathematics Fundamentals', 3, 2,'2019-09-28','2019-09-28'),
+(3,'Law Enforcement', 5, 3,'2019-09-28','2019-09-28'),
+(4,'Digital Commerce', 4, 4,'2019-09-28','2019-09-28'),
+(5,'Block Chain Engineering', 7, 5,'2019-09-28','2019-09-28'),
+(6,'Univers101', 6, 6,'2019-09-28','2019-09-28'),
+(7,'Professor: Advance', 9, 7,'2019-09-28','2019-09-28'),
+(8,'Law-Federal', 8, 8,'2019-09-28','2019-09-28'),
+(9,'Symphony Orchestra', 2, 9,'2019-09-28','2019-09-28'),
+(10,'Consumers Buying Guide', 6, 10,'2019-09-28','2019-09-28');
+
+-- -----------------------------------------------------
+-- Table `University`.`RoomType`
+-- -----------------------------------------------------
+Insert into University.RoomType (RoomTypeID,Flat_Level_FlatID,Type,Date_Created,Date_Modified)
+values
+(1,1, 'Single','2019-09-28','2019-09-28'),
+(1,2, 'SinglePlus','2019-09-28','2019-09-28'),
+(1,3, 'SingleXL','2019-09-28','2019-09-28');
+
+
+-- -----------------------------------------------------
+-- Table `University`.`Lease`
+-- -----------------------------------------------------
+Insert into University.Lease (LeaseID,Student_StudentID,Accommodation_Type_AccommodationTypeID,Lease_Duration,Wish_Date_IN,Wish_Date_OUT,Date_Created,Date_Modified)
+values
+(1,3,2,'1 year','2019-01-01','2020-01-01', '2019-09-28','2019-09-28'),
+(2,5,6,'6 month','2019-01-01','2019-06-10', '2019-09-28','2019-09-28'),
+(3,7,10,'6 months','2019-01-01','2020-06-12', '2019-09-28','2019-09-28'),
+(4,9,8,'4 months','2019-02-15','2020-06-15', '2019-09-28','2019-09-28'),
+(5,2,5,'6 month','2019-03-01','2019-09-25', '2019-09-28','2019-09-28'),
+(6,4,4,'3 month','2019-02-20','2019-05-20', '2019-09-28','2019-09-28'),
+(7,6,1,'3 months','2019-02-08','2019-05-08', '2019-09-28','2019-09-28'),
+(8,8,3,'1 month','2019-01-01','2019-02-01', '2019-09-28','2019-09-28'),
+(9,10,7,'2 years','2019-03-01','2021-03-01', '2019-09-28','2019-09-28'),
+(10,1,9,'2 years','2019-04-18','2021-04-18', '2019-09-28','2019-09-28'),
+
+
+-- -----------------------------------------------------
+-- Table `University`.`Quarters`
+-- -----------------------------------------------------
+Insert into University.Quarters (QuartersID, Quarter, Date_Created, Date_Modified)
+values
+(1,'Spring','2019-09-28','2019-09-28'),
+(2,'Summer','2019-09-28','2019-09-28'),
+(3,'Fall','2019-09-28','2019-09-28'),
+(4,'Winter','2019-09-28','2019-09-28');
+
+-- -----------------------------------------------------
+-- Table `University`.`Invoices`
+-- -----------------------------------------------------
+Insert into University.Invoices (InvoicesID,Lease_LeaseID,Quarters_QuartersID,Student_StudentID,Payment_Due_Date,First_Reminder,Second_Reminder,Remarks,Date_Created,Date_Modified)
+values
+(1,2,2,1,'2019-01-01','2020-06-01','2020-07-01','2019-09-28','2019-09-28'),
+(2,4,2,5,'2019-01-01','2020-06-01','2020-08-01','2019-09-28','2019-09-28'),
+(3,6,4,7,'2019-01-01','2020-07-15','2020-08-08','2019-09-28','2019-09-28'),
+(4,8,2,9,'2019-01-01','2020-09-05','2020-10-03','2019-09-28','2019-09-28'),
+(5,10,4,10,'2019-01-01','2020-11-06','2020-12-06','2019-09-28','2019-09-28'),
+(6,5,1,2,'2019-01-01','2020-08-01','2020-09-01','2019-09-28','2019-09-28'),
+(7,1,2,4,'2019-01-01','2020-03-14','2020-05-20','2019-09-28','2019-09-28'),
+(8,3,3,6,'2019-01-01','2020-05-16','2020-06-07','2019-09-28','2019-09-28'),
+(9,7,4,8,'2019-01-01','2020-02-08','2020-03-08h','2019-09-28','2019-09-28'),
+(10,9,1,3,'2019-01-01','2020-03-24','2020-04-24','2019-09-28','2019-09-28');
+
+
+-- -----------------------------------------------------
+-- Table `University`.`Payment`
+-- -----------------------------------------------------
+Insert into University.Payment (PaymentID, Payment_Date, Method, Invoices_InvoicesID, Date_Created, Date_Modified)
+values
+(1, '2019-09-28', 'Credit', 1, '2019-09-28','2019-09-28'),
+(2, '2019-09-28', 'Debit', 2, '2019-09-28','2019-09-28'),
+(3, '2019-09-28', 'Cash', 4, '2019-09-28','2019-09-28'),
+(4, '2019-09-28', 'MoneyOrder', 5, '2019-09-28','2019-09-28'),
+(5, '2019-09-28', 'Cheque', 8, '2019-09-28','2019-09-28'),
+(6, '2019-09-28', 'Cheque', 6, '2019-09-28','2019-09-28'),
+(7, '2019-09-28', 'Cheque', 3, '2019-09-28','2019-09-28'),
+(8, '2019-09-28', 'Cheque', 7, '2019-09-28','2019-09-28'),
+(9, '2019-09-28', 'Debit', 9, '2019-09-28','2019-09-28'),
+(10, '2019-09-28', 'Cash', 10, '2019-09-28','2019-09-28');
+
+-- -----------------------------------------------------
+-- Table `University`.`AccomodationStaff`
+-- -----------------------------------------------------
+Insert into University.AccomodationStaff (AccomodationStaffID, FirstName, LastName, Position, Address, PhoneNumber, Date_Created, Date_Modified )
+values
+(1, 'Alex','Alejandro', 'Hall Manager', '225 Arioana Drive, Queens, ON', '416-885-8847','2019-09-28','2019-09-28'),
+(2, 'Junelle','Rodney', 'Assistant Hall Manager', '10 Hayatt st, Oliove, ON', '905-885-7136','2019-09-28','2019-09-28'),
+(3, 'Abby','Zeekology', 'HR Manager', '28 Darsam Crt, Orangeville, ON', '911-115-551','2019-09-28','2019-09-28'),
+(4, 'Lyn','Pangit', 'Admin Assistant', '5 Ana Drive, Brampton, ON', '416-999-2224','2019-09-28','2019-09-28'),
+(5, 'John','Potpot', 'Accountant', '25 Potpot Crt, Georgetown, ON', '514-666-4447','2019-09-28','2019-09-28'),
+(6, 'Jenny','Alejandro', 'Cleaner', '225 Arioana Drive, Queens, ON', '416-885-8847','2019-09-28','2019-09-28'),
+(7, 'Jacky','Alejandro', 'Cleaner', '225 Arioana Drive, Queens, ON', '647-135-98752','2019-09-28','2019-09-28'),
+(8, 'Fred','Matthew', 'Inspector', '10 Flat St., Mississauga, ON', '9056-366-5624','2019-09-28','2019-09-28'),
+(9, 'Jay','Steward', 'Inspector', '2010 Torbram St, Brampton, ON', '645-441-2112','2019-09-28','2019-09-28'),
+(10, 'John','Allen', 'Inspector', '115-10A Dundas Circle, Toronto, ON', '905-112-4415','2019-09-28','2019-09-28');
+
+
+-- -----------------------------------------------------
+-- Table `University`.`FlatInspection`
+-- -----------------------------------------------------
+Insert into University.FlatInspection (FlatInspectionID, AccomodationStaff_AccomodationStaffID, Flat_Level_FlatID, Condition_Status, Remarks, Date_Created, Date_Modified)
+values
+(1, 8, 1, 'Good', 'None', '2019-09-28','2019-09-28'),
+(1, 9, 2, 'Good', 'None', '2019-09-28','2019-09-28'),
+(1, 10, 3, 'Good', 'None', '2019-09-28','2019-09-28'),
+(1, 10, 1, 'Good', 'None', '2019-10-28','2019-10-15'),
+(1, 8, 2, 'Good', 'None', '2019-10-28','2019-10-15'),
+(1, 9, 3, 'Good', 'None', '2019-10-28','2019-10-21');
+
+
+-- -----------------------------------------------------
+-- Table `University`.`Students_has_Courses`
+-- -----------------------------------------------------
+Insert into University.Students_has_Courses (Course_CourseID, Student_StudentID, Date_Created, Date_Created)
+values
+(1, 1, '2019-09-28','2019-09-28'),
+(2, 3, '2019-09-28','2019-09-28'),
+(3, 7, '2019-09-28','2019-09-28'),
+(4, 5, '2019-09-28','2019-09-28'),
+(5, 10, '2019-09-28','2019-09-28'),
+(6, 9, '2019-09-28','2019-09-28'),
+(7, 6, '2019-09-28','2019-09-28'),
+(8, 2, '2019-09-28','2019-09-28'),
+(9, 8, '2019-09-28','2019-09-28'),
+(10, 4, '2019-09-28','2019-09-28');
