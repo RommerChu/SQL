@@ -61,6 +61,8 @@ values (13,'Washington','Olympia',4300000,68192,'Bing Crosby','Evergreen State',
 insert into PopulationState(id, State, Capital, PopulationNumber, Area, FamousPeople, NickName, UnionYear, StateBird)
 values (14,'Wisconsin','Madison',4751000,56154,'Spencer Tracy','Badger State',1848,'Robin')
 
+select * from PopulationState
+
 
 /* 2.List the states that entered the union between 1850-1920, inclusive ( hint: type in 1850...1920).*/
 select State, UnionYear from PopulationState where UnionYear between 1850 and 1920 order by UnionYear asc;

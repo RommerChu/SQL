@@ -25,7 +25,7 @@ total for each order that the customer has made. Save this query as a sql script
 select * from Customers
 select * from Orders
 select * from OrderDetails
-select 
+select
 	Customers.CompanyName, 
 	Customers.Address, 
 	Customers.CustomerID, 
@@ -71,13 +71,16 @@ as ProductSearch.
 */
 select Products.ProductName from Products
 
-CREATE PROCEDURE ProductSearch
-AS
+create procedure spProductSearch
+as
+begin
 select Products.ProductName from Products
-GO
+end
 
 
-EXEC ProductSearch
+exec spProductSearch
+
+
 
 /*
 6. Create a tabled valued function that takes allows you to pass Country name to the function. This function should join the customers table to the Orders Table and you should also be able

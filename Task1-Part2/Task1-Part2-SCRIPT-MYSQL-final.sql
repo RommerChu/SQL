@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `University`.`Advisors` (
 ENGINE = InnoDB;
 
 /*****DATA INSERT*****/
-Insert into University.Advisors (AdvisorID, First_Name, Last_Name, Phone_Number, Email, Date_Created, Date_Modified)
+Insert into University.Advisors (AdvisorsID, First_Name, Last_Name, Phone_Number, Email, Date_Created, Date_Modified)
 values
 (1,'Rommer','Chu','416-720-2720','rommer.chu@gmail.com','2019-09-28','2019-09-28'),
 (2,'Corazon','Chu','cora@gmail.com','416-720-2700','2019-09-28','2019-09-28'),
@@ -136,16 +136,16 @@ ENGINE = InnoDB;
 /*****DATA INSERT*****/
 Insert into University.Student (StudentID, First_Name, Last_Name, Address, Gender, Nationality, Special_Needs, Categories_CategoriesID, Advisors_AdvisorsID, Status_id, Comments, Date_Created, Date_Modified)
 values
-(1,'William','Smith','123 Center Rd, Mono ON','Male','American','Tutorial need','NONE',1,2,'In-Process','NONE','2019-09-28','2019-09-28'),
-(2,'Steven','Frott','101 Amaranth St, Subsurb ON','Male','Canadian','None',1,4,'Occupying','NONE','2019-09-28','2019-09-28'),
-(3,'Stacey','Adams','1150 Rutherford, Toronto ON','Female','Irish', 'None',2,6,'Waiting','NONE','2019-09-28','2019-09-28'),
-(4,'Vannesa','Doe','5th St. Center Ave, North York ON','Female','British','None',3,8,'In-Process','NONE','2019-09-28','2019-09-28'),
-(5,'Matt','Thomas','100 Daisy Drive, Caledon ON','Male','Jamaican', 'Process graduation',4,'Occupying''NONE','2019-09-28','2019-09-28'),
-(6,'Corazon','Ramos','19 Orchids St.Brampton ON','Female','Spanish','None',3,10,'Occupying','NONE','2019-09-28','2019-09-28'),
-(7,'Jeff','Blumberg','55 Sweet Candy Rd, Ajax ON','Male','Swedish','None',2,1,'Occupying', 'NONE','2019-09-28','2019-09-28'),
-(8,'Hanna','Daviniche','10-A Richmond Ave, Richmond ON','Female','German', 'None',1,3,'In-Process''NONE','2019-09-28','2019-09-28'),
-(9,'Victor','Wilson','40 First St, Orangeville ON','Male','Japanese', 'None',4,5,'In-Process''NONE','2019-09-28','2019-09-28'),
-(10,'Juanito','Soler','1865 Dundas St, Peterbourough ON','Male','Mexican','LanguageTranslator',1,7,'Not Applicable','NONE','2019-09-28','2019-09-28');
+(1,'William','Smith','123 Center Rd, Mono ON','Male','American','Tutorial need',1,2,1,'NONE','2019-09-28','2019-09-28'),
+(2,'Steven','Frott','101 Amaranth St, Subsurb ON','Male','Canadian','NONE',1,4,1,'NONE','2019-09-28','2019-09-28'),
+(3,'Stacey','Adams','1150 Rutherford, Toronto ON','Female','Irish','NONE',2,6,1,'NONE','2019-09-28','2019-09-28'),
+(4,'Vannesa','Doe','5th St. Center Ave, North York ON','Female','British','NONE',3,8,2,'NONE','2019-09-28','2019-09-28'),
+(5,'Matt','Thomas','100 Daisy Drive, Caledon ON','Male','Jamaican','Process graduation',4,2,2,'NONE','2019-09-28','2019-09-28'),
+(6,'Corazon','Ramos','19 Orchids St.Brampton ON','Female','Spanish','NONE',3,10,1,'NONE','2019-09-28','2019-09-28'),
+(7,'Jeff','Blumberg','55 Sweet Candy Rd, Ajax ON','Male','Swedish','NONE',2,1,1, 'NONE','2019-09-28','2019-09-28'),
+(8,'Hanna','Daviniche','10-A Richmond Ave, Richmond ON','Female','German','NONE',1,3,1,'NONE','2019-09-28','2019-09-28'),
+(9,'Victor','Wilson','40 First St, Orangeville ON','Male','Japanese','NONE',4,5,2,'NONE','2019-09-28','2019-09-28'),
+(10,'Juanito','Soler','1865 Dundas St, Peterbourough ON','Male','Mexican','LanguageTranslator',1,7,1,'NONE','2019-09-28','2019-09-28');
 
 
 -- -----------------------------------------------------
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `University`.`Contacts` (
   `StudentID` INT NOT NULL,
   `Relationship` VARCHAR(50) NOT NULL,
   `Address` VARCHAR(255) NOT NULL,
-  `Phone_No` BIGINT NOT NULL,
+  `Phone_No` VARCHAR(50),
   `Date_Created` DATETIME NULL,
   `Date_Modified` DATETIME NULL,
   PRIMARY KEY (`ContactID`),
@@ -179,11 +179,11 @@ Insert into University.Contacts (ContactID, SSN, First_Name, Last_Name, StudentI
 values
 (1,'5612251998','Robert','Smith',1,'Father','123 Center Rd, Mono ON','647-115-6985','2019-09-28','2019-09-28'),
 (2,'487966551','Nancy','Frott',2,'Mother','101 Amaranth St, Subsurb ON','519-224-6901','2019-09-28','2019-09-28'),
-(3,'785648533','Rupert','Adams',3,'Father','1150 Rutherford, Toronto ON','416-885-7793','2019-09-28','2019-09-28'),
+(3,'785648575','Rupert','Adams',3,'Father','1150 Rutherford, Toronto ON','416-885-7793','2019-09-28','2019-09-28'),
 (4,'416885217','Adam','Doe',4,'Father','5th St. Center Ave, North York ON','905-554-4114','2019-09-28','2019-09-28'),
 (5,'785648533','Jackie','Allen',5,'Aunt','89 Daisy Drive, Caledon ON','699-224-5454','2019-09-28','2019-09-28'),
 (6,'5612779918','Juanito','Ramos',6,'Father','19 Orchids St.Brampton ON','645-123-1231','2019-09-28','2019-09-28'),
-(7,'785648533','Stephanie','Blumberg',7,'Mother','55 Sweet Candy Rd, Ajax ON','647-288-8818','2019-09-28','2019-09-28'),
+(7,'785648680','Stephanie','Blumberg',7,'Mother','55 Sweet Candy Rd, Ajax ON','647-288-8818','2019-09-28','2019-09-28'),
 (8,'561277844','John','Daviniche',8,'Father','10-A Richmond Ave,Richmond ON','647-444-7771','2019-09-28','2019-09-28'),
 (9,'5612779951','Jack','Wilson',9,'Father','40 First St, Orangeville ON','905-453-5333','2019-09-28','2019-09-28'),
 (10,'4896665123','Anita','Soler',10,'Mother','1865 Dundas St, Peterbourough ON','416-885-7793','2019-09-28','2019-09-28');
@@ -200,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `University`.`HallResidence` (
   `Number_of_Rooms` VARCHAR(25) NOT NULL,
   `Telephone` VARCHAR(25) NOT NULL,
   `Manager_Name` VARCHAR(50) NOT NULL,
-  `Monthly_Rate` DECIMAL(4,2) NOT NULL,
+  `Monthly_Rate` VARCHAR(50) NOT NULL,
   `Date_Created` DATETIME NULL,
   `Date_Modified` DATETIME NULL,
   PRIMARY KEY (`HallResidenceID`))
@@ -211,7 +211,7 @@ Insert into University.HallResidence (HallResidenceID, Residence_Name, Address, 
 values
 (1,'Alpha Hall','255 Chrysler st., University belt, ON', '20', '645-888-1551','Steven Martin','$800','2019-09-28','2019-09-28'),
 (2,'Bravo Hall','257 Chrysler st., University belt, ON', '30', '591-665-2245','Victoria Ly','$600','2019-09-28','2019-09-28'),
-(3,'Charlie Hall','259 Chrysler st., University belt, ON', '20', '905-123-456','Jane Matthew','$500','2019-09-28','2019-09-28'),
+(3,'Charlie Hall','259 Chrysler st., University belt, ON', '20', '905-123-456','Jane Matthew','$500','2019-09-28','2019-09-28');
 
 -- -----------------------------------------------------
 -- Table `University`.`Flat_Level`
@@ -222,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `University`.`Flat_Level` (
   `FlatID` INT NOT NULL,
   `Type` VARCHAR(45) NOT NULL DEFAULT '1st,2nd,3rd Floor',
   `Date_Created` DATETIME NULL,
-  `Date_Created` DATETIME NULL,
+  `Date_Modified` DATETIME NULL,
   PRIMARY KEY (`FlatID`))
 ENGINE = InnoDB;
 
@@ -257,11 +257,9 @@ ENGINE = InnoDB;
 Insert into University.Flat (FlatID, Flat_Level_id, Address, Date_Created, Date_Modified)
 values 
 (1, 1, '255 Chrysler st., University belt, ON', '2019-09-28','2019-09-28'),
-(1, 1, '257 Chrysler st., University belt, ON', '2019-09-28','2019-09-28'),
-(1, 2, '259 Chrysler st., University belt, ON', '2019-09-28','2019-09-28'),
-(1, 3, '257 Chrysler st., University belt, ON', '2019-09-28','2019-09-28'),
-(1, 3, '259 Chrysler st., University belt, ON', '2019-09-28','2019-09-28'),
-(1, 2, '255 Chrysler st., University belt, ON', '2019-09-28','2019-09-28');
+(2, 3, '257 Chrysler st., University belt, ON', '2019-09-28','2019-09-28'),
+(3, 2, '259 Chrysler st., University belt, ON', '2019-09-28','2019-09-28');
+
 
 -- -----------------------------------------------------
 -- Table `University`.`Accommodation_Type`
@@ -358,7 +356,7 @@ CREATE TABLE IF NOT EXISTS `University`.`Instructors` (
   `InstructorsID` INT NOT NULL AUTO_INCREMENT,
   `FirstName` VARCHAR(45) NOT NULL,
   `LastName` VARCHAR(45) NOT NULL,
-  `Faculty` VARCHAR(45) NOT NULL DEFAULT 'Science,Management,Marketing,Pharmacy,Law,Police,IT,Logistics',
+  `Faculty` VARCHAR(45) NOT NULL,
   `Date_Created` DATETIME NULL,
   `Date_Modified` DATETIME NULL,
   PRIMARY KEY (`InstructorsID`),
@@ -424,7 +422,7 @@ CREATE TABLE IF NOT EXISTS `University`.`RoomType` (
   `Flat_Level_FlatID` INT NOT NULL,
   `Type` VARCHAR(45) NOT NULL DEFAULT 'Single, SinglePlus, SingleXL',
   `Date_Created` DATETIME NULL,
-  `Date_Created` DATETIME NULL,
+  `Date_Modified` DATETIME NULL,
   PRIMARY KEY (`RoomTypeID`),
   INDEX `fk_RoomType_Flat_Level1_idx` (`Flat_Level_FlatID` ASC) VISIBLE,
   CONSTRAINT `fk_RoomType_Flat_Level1`
@@ -438,8 +436,8 @@ ENGINE = InnoDB;
 Insert into University.RoomType (RoomTypeID,Flat_Level_FlatID,Type,Date_Created,Date_Modified)
 values
 (1,1, 'Single','2019-09-28','2019-09-28'),
-(1,2, 'SinglePlus','2019-09-28','2019-09-28'),
-(1,3, 'SingleXL','2019-09-28','2019-09-28');
+(2,2, 'SinglePlus','2019-09-28','2019-09-28'),
+(3,3, 'SingleXL','2019-09-28','2019-09-28');
 
 -- -----------------------------------------------------
 -- Table `University`.`Lease`
@@ -544,18 +542,18 @@ CREATE TABLE IF NOT EXISTS `University`.`Invoices` (
 ENGINE = InnoDB;
 
 /*****DATA INSERT*****/
-Insert into University.Invoices (InvoicesID,Lease_LeaseID,Quarters_QuartersID,Student_StudentID,Payment_Due_Date,First_Reminder,Second_Reminder,Remarks,Date_Created,Date_Modified)
+Insert into University.Invoices (InvoicesID,Lease_LeaseID,Quarters_QuartersID,Student_StudentID, Payment_Due_Date, First_Reminder, Second_Reminder, Remarks, Date_Created, Date_Modified)
 values
-(1,2,2,1,'2019-01-01','2020-06-01','2020-07-01','2019-09-28','2019-09-28'),
-(2,4,2,5,'2019-01-01','2020-06-01','2020-08-01','2019-09-28','2019-09-28'),
-(3,6,4,7,'2019-01-01','2020-07-15','2020-08-08','2019-09-28','2019-09-28'),
-(4,8,2,9,'2019-01-01','2020-09-05','2020-10-03','2019-09-28','2019-09-28'),
-(5,10,4,10,'2019-01-01','2020-11-06','2020-12-06','2019-09-28','2019-09-28'),
-(6,5,1,2,'2019-01-01','2020-08-01','2020-09-01','2019-09-28','2019-09-28'),
-(7,1,2,4,'2019-01-01','2020-03-14','2020-05-20','2019-09-28','2019-09-28'),
-(8,3,3,6,'2019-01-01','2020-05-16','2020-06-07','2019-09-28','2019-09-28'),
-(9,7,4,8,'2019-01-01','2020-02-08','2020-03-08h','2019-09-28','2019-09-28'),
-(10,9,1,3,'2019-01-01','2020-03-24','2020-04-24','2019-09-28','2019-09-28');
+(1,2,2,1,'2019-01-01','2020-06-01','2020-07-01','','2019-09-28','2019-09-28'),
+(2,4,2,5,'2019-01-01','2020-06-01','2020-08-01','','2019-09-28','2019-09-28'),
+(3,6,4,7,'2019-01-01','2020-07-15','2020-08-08','','2019-09-28','2019-09-28'),
+(4,8,2,9,'2019-01-01','2020-09-05','2020-10-03','','2019-09-28','2019-09-28'),
+(5,10,4,10,'2019-01-01','2020-11-06','2020-12-06','','2019-09-28','2019-09-28'),
+(6,5,1,2,'2019-01-01','2020-08-01','2020-09-01','','2019-09-28','2019-09-28'),
+(7,1,2,4,'2019-01-01','2020-03-14','2020-05-20','','2019-09-28','2019-09-28'),
+(8,3,3,6,'2019-01-01','2020-05-16','2020-06-07','','2019-09-28','2019-09-28'),
+(9,7,4,8,'2019-01-01','2020-02-08','2020-03-08','','2019-09-28','2019-09-28'),
+(10,9,1,3,'2019-01-01','2020-03-24','2020-04-24','','2019-09-28','2019-09-28');
 
 -- -----------------------------------------------------
 -- Table `University`.`Payment`
@@ -565,9 +563,9 @@ DROP TABLE IF EXISTS `University`.`Payment` ;
 CREATE TABLE IF NOT EXISTS `University`.`Payment` (
   `PaymentID` INT NOT NULL AUTO_INCREMENT,
   `Payment_Date` DATETIME NOT NULL,
-  `Method` VARCHAR(50) NOT NULL DEFAULT 'Credit,Debit,Cash,Cheque,MO',
+  `Method` VARCHAR(50) NOT NULL,
   `Invoices_InvoicesID` INT NOT NULL,
-  `Total Amount` DECIMAL NOT NULL,
+  `Total_Amount` DECIMAL NOT NULL,
   `Date_Created` DATETIME NULL,
   `Date_Modified` DATETIME NULL,
   PRIMARY KEY (`PaymentID`),
@@ -579,19 +577,19 @@ CREATE TABLE IF NOT EXISTS `University`.`Payment` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-/*****DATA INSERT*****/
-Insert into University.Payment (PaymentID, Payment_Date, Method, Invoices_InvoicesID, Date_Created, Date_Modified)
+/*****DATA INSERT*********************************************************************************************************************/
+Insert into University.Payment (PaymentID, Payment_Date, Method, Invoices_InvoicesID, Total_Amount, Date_Created, Date_Modified)
 values
-(1, '2019-09-28', 'Credit', 1, '2019-09-28','2019-09-28'),
-(2, '2019-09-28', 'Debit', 2, '2019-09-28','2019-09-28'),
-(3, '2019-09-28', 'Cash', 4, '2019-09-28','2019-09-28'),
-(4, '2019-09-28', 'MoneyOrder', 5, '2019-09-28','2019-09-28'),
-(5, '2019-09-28', 'Cheque', 8, '2019-09-28','2019-09-28'),
-(6, '2019-09-28', 'Cheque', 6, '2019-09-28','2019-09-28'),
-(7, '2019-09-28', 'Cheque', 3, '2019-09-28','2019-09-28'),
-(8, '2019-09-28', 'Cheque', 7, '2019-09-28','2019-09-28'),
-(9, '2019-09-28', 'Debit', 9, '2019-09-28','2019-09-28'),
-(10, '2019-09-28', 'Cash', 10, '2019-09-28','2019-09-28');
+(1, '2019-06-28', 'Credit', 3, 547.23,'2019-09-30','2019-09-28'),
+(2, '2019-10-28', 'Debit', 2, 600.25,'2019-09-28','2019-09-28'),
+(3, '2019-11-20', 'Cash', 4, 552.25 ,'2019-09-28','2019-09-28'),
+(4, '2019-12-10', 'MoneyOrder', 5, 645.98,'2019-09-28','2019-09-28'),
+(5, '2019-11-02', 'Cheque', 8, 700.12,'2019-09-28','2019-09-28'),
+(6, '2019-08-01', 'Debit', 6, 656.35,'2019-09-28','2019-09-28'),
+(7, '2019-07-30', 'Cheque', 4, 445.80,'2019-09-28','2019-09-28'),
+(8, '2019-10-02', 'Cheque', 7, 648.24 ,'2019-09-28','2019-09-28'),
+(9, '2019-10-15', 'Debit', 9, 500.25,'2019-09-28','2019-09-28'),
+(10, '2019-11-03', 'Cash', 10, 500.98,'2019-09-28','2019-09-28');
 
 -- -----------------------------------------------------
 -- Table `University`.`AccomodationStaff`
@@ -608,13 +606,13 @@ CREATE TABLE IF NOT EXISTS `University`.`AccomodationStaff` (
   `Date_Created` VARCHAR(45) NULL,
   `Date_Modified` VARCHAR(45) NULL,
   PRIMARY KEY (`AccomodationStaffID`),
-  UNIQUE INDEX `PhoneNumber_UNIQUE` (`PhoneNumber` ASC) VISIBLE)
+  UNIQUE INDEX `PhoneNumber` (`PhoneNumber` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 /*****DATA INSERT*****/
 Insert into University.AccomodationStaff (AccomodationStaffID, FirstName, LastName, Position, Address, PhoneNumber, Date_Created, Date_Modified )
 values
-(1, 'Alex','Alejandro', 'Hall Manager', '225 Arioana Drive, Queens, ON', '416-885-8847','2019-09-28','2019-09-28'),
+(1, 'Alex','Alejandro', 'Hall Manager', '225 Arioana Drive, Queens, ON', '416-885-8849','2019-09-28','2019-09-28'),
 (2, 'Junelle','Rodney', 'Assistant Hall Manager', '10 Hayatt st, Oliove, ON', '905-885-7136','2019-09-28','2019-09-28'),
 (3, 'Abby','Zeekology', 'HR Manager', '28 Darsam Crt, Orangeville, ON', '911-115-551','2019-09-28','2019-09-28'),
 (4, 'Lyn','Pangit', 'Admin Assistant', '5 Ana Drive, Brampton, ON', '416-999-2224','2019-09-28','2019-09-28'),
@@ -631,10 +629,10 @@ values
 DROP TABLE IF EXISTS `University`.`FlatInspection` ;
 
 CREATE TABLE IF NOT EXISTS `University`.`FlatInspection` (
-  `FlatInspectionID` INT NOT NULL AUTO_INCREMENT,
+  `FlatInspectionID` INT NOT NULL,
   `AccomodationStaff_AccomodationStaffID` INT NOT NULL,
   `Flat_Level_FlatID` INT NOT NULL,
-  `Condition_Status` VARCHAR(45) NOT NULL DEFAULT 'Good, Bad, Repair',
+  `Condition_Status` VARCHAR(45) NOT NULL,
   `Remarks` VARCHAR(45) NULL,
   `Date_Created` DATETIME NULL,
   `Date_Modified` DATETIME NULL,
@@ -656,12 +654,12 @@ ENGINE = InnoDB;
 /*****DATA INSERT*****/
 Insert into University.FlatInspection (FlatInspectionID, AccomodationStaff_AccomodationStaffID, Flat_Level_FlatID, Condition_Status, Remarks, Date_Created, Date_Modified)
 values
-(1, 8, 1, 'Good', 'None', '2019-09-28','2019-09-28'),
-(1, 9, 2, 'Good', 'None', '2019-09-28','2019-09-28'),
-(1, 10, 3, 'Good', 'None', '2019-09-28','2019-09-28'),
-(1, 10, 1, 'Good', 'None', '2019-10-28','2019-10-15'),
-(1, 8, 2, 'Good', 'None', '2019-10-28','2019-10-15'),
-(1, 9, 3, 'Good', 'None', '2019-10-28','2019-10-21');
+(1, 8, 1, 'Bad', 'None', '2019-09-28','2019-09-28'),
+(2, 9, 2, 'Good', 'None', '2019-09-28','2019-09-28'),
+(3, 10, 3, 'Good', 'None', '2019-09-28','2019-09-28'),
+(4, 9, 1, 'Bad', 'None', '2019-10-28','2019-10-15'),
+(5, 10, 2, 'Good', 'None', '2019-10-28','2019-10-15'),
+(6, 8, 3, 'Good', 'None', '2019-10-28','2019-10-21');
 
 -- -----------------------------------------------------
 -- Table `University`.`Students_has_Courses`
@@ -672,7 +670,7 @@ CREATE TABLE IF NOT EXISTS `University`.`Students_has_Courses` (
   `Course_CourseID` INT NOT NULL AUTO_INCREMENT,
   `Student_StudentID` INT NOT NULL,
   `Date_Created` DATETIME NULL,
-  `Date_Created` VARCHAR(45) NULL,
+  `Date_Modified` VARCHAR(45) NULL,
   PRIMARY KEY (`Course_CourseID`, `Student_StudentID`),
   INDEX `fk_Course_has_Student_Student1_idx` (`Student_StudentID` ASC) VISIBLE,
   INDEX `fk_Course_has_Student_Course1_idx` (`Course_CourseID` ASC) VISIBLE,
@@ -689,7 +687,7 @@ CREATE TABLE IF NOT EXISTS `University`.`Students_has_Courses` (
 ENGINE = InnoDB;
 
 /*****DATA INSERT*****/
-Insert into University.Students_has_Courses (Course_CourseID, Student_StudentID, Date_Created, Date_Created)
+Insert into University.Students_has_Courses (Course_CourseID, Student_StudentID, Date_Created, Date_Modified)
 values
 (1, 1, '2019-09-28','2019-09-28'),
 (2, 3, '2019-09-28','2019-09-28'),
